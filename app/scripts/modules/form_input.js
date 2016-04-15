@@ -1,3 +1,5 @@
+'use strict'
+
 import React from 'react';
 import FormAjax from './form_ajax.js';
 
@@ -41,7 +43,7 @@ class FormComponent extends React.Component {
                     type='text'
                     value={this.state.inputValue}
                     onChange={this.handleChange.bind( this )} />
-                <FormAjax url="pouet.json" />
+                <FormAjax />
             </div>
         );
     }

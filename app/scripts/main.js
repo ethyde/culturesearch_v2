@@ -1,6 +1,11 @@
+'use strict'
+
+// "fetch" global
+require('whatwg-fetch');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import only the render function of react-dom using ES2015 destructuring
+import { render } from 'react-dom'
 import FormComponent from './modules/form_input.js';
 
 class App extends React.Component {
@@ -14,4 +19,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+render(<App/>, document.getElementById('app'));

@@ -1,3 +1,5 @@
+'use strict'
+
 import React from 'react';
 
 class FormAjax extends React.Component {
@@ -17,7 +19,9 @@ class FormAjax extends React.Component {
     }
     
     render() {
-        
+        return (
+            <button url="pouet.json" onSubmit={this.loadData.bind( this )}>ok</button>
+        );
     }
 }
 
