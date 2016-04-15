@@ -1,17 +1,17 @@
 
 import React from 'react';
-import {render} from 'react-dom';
-import AwesomeComponent from './modules/common_module.js';
+import ReactDOM from 'react-dom';
+import FormComponent from './modules/form_input.js';
 
 class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <p> Hello React ! </p>
-        <AwesomeComponent />
-      </div>
-    );
-  }
+    render () {
+        return (
+            <div>
+                <p> Hello React ! </p>
+                <FormComponent />
+            </div>
+        );
+    }
 }
 
-render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
