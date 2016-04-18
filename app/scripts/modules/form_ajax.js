@@ -7,9 +7,10 @@ class FormAjax extends React.Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
+        this.loadData = this.loadData.bind( this );
     }
 
-    loadData(){
+    loadData() {
 
         fetch(this.props.url)
             .then(response => response.json())
@@ -20,7 +21,7 @@ class FormAjax extends React.Component {
     
     render() {
         return (
-            <button url="pouet.json" onSubmit={this.loadData.bind( this )}>ok</button>
+            <button onClick={this.loadData}>ok</button>
         );
     }
 }

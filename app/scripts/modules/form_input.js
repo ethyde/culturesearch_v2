@@ -43,7 +43,9 @@ class FormComponent extends React.Component {
                     type='text'
                     value={this.state.inputValue}
                     onChange={this.handleChange.bind( this )} />
-                <FormAjax />
+
+                <FormAjax 
+                    url="http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json" />
             </div>
         );
     }
