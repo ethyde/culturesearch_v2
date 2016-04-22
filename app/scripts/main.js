@@ -9,17 +9,25 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Custom, personal modules
-import FormComponent from './modules/form_input.js';
+import Form from './modules/FormComponent.js';
+
+// Constantes
+const root = document.getElementById('app');
 
 class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render () {
         return (
             <div>
                 <p> Hello React ! </p>
-                <FormComponent />
+                <Form />
             </div>
         );
     }
 }
 
-render(<App/>, document.getElementById('app'));
+render(<App/>, root);
