@@ -1,0 +1,70 @@
+'use strict'
+
+import React from 'react';
+
+class Form extends React.Component {
+    
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {likesCount : 0};
+    //     this.onLike = this.onLike.bind(this);
+    // }
+
+    // onLike () {
+    //     let newLikesCount = this.state.likesCount + 1;
+    //     this.setState({likesCount: newLikesCount});
+    // }
+
+    // render() {
+    //     return (
+    //         <div>
+    //             Likes : <span>{this.state.likesCount}</span>
+    //             <div>
+    //                 <button onClick={this.onLike}>Like Me</button>
+    //             </div>
+    //         </div>
+    //     );
+    // }
+
+    constructor(props) {
+        super(props);
+        this.state = {inputValue: 'pouet'};
+        this.state = { data: [] };
+        this.loadData = this.loadData.bind( this );
+    }
+
+    handleChange( e ) {
+        this.setState({ inputValue: e.target.value });
+    }
+    
+    loadData() {
+
+        fetch(this.props.url)
+            .then(response => response.json())
+            .then(data => this.setState({ data: data }))
+            .catch(err => console.error(this.props.url, err.toString()));
+
+        // console.log(this.content);
+
+    }
+
+    render() {
+        return (
+            <div>
+                <input
+                    type='text'
+                    value={this.state.inputValue}
+                    onChange={this.handleChange.bind( this )} />
+                <button 
+                    onClick={this.loadData} 
+                    >
+                    ok
+                </button>
+                <div></div>
+            </div>
+        );
+    }
+
+}
+
+export default Form;
